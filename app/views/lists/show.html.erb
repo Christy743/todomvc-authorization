@@ -1,0 +1,20 @@
+<header id="header">
+  <h1><%= @list.name %></h1>
+
+  <%= form_for([@list, Item.new]) do |f| %>
+    <%= f.text_field :description, :id => "new-todo", :placeholder => "Add a task...", :autofocus => true %>
+  <% end %>
+</header>
+
+<section id="main">
+  <label for="toggle-all">Mark all as complete</label>
+  <ul id="todo-list">
+    <%= render @list.items %>
+  </ul>
+</section>
+
+<footer id="footer">
+  <%= link_to "Home", root_path %>
+
+  <p>You are logged in as: <%= current_user.username %></p>
+</footer>

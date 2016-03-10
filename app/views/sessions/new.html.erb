@@ -1,0 +1,18 @@
+<header id="header">
+  <h1>Login</h1>
+
+  <%= form_tag(sessions_path) do %>
+    <input type="text" id="new-todo" name="email" placeholder="Your Email" />
+
+    <input type="password" id="new-todo" name="password" placeholder="Your Password" />
+
+    <button type="submit">    
+  <% end %>
+</header>
+
+<footer id="footer">
+  <%= link_to "Login via Github", '/auth/github' %>
+</footer>
+
+
+

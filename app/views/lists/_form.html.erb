@@ -1,0 +1,20 @@
+<%= form_for(@list) do |list_form| %>
+  <p><%= list_form.label :name %> <%= list_form.text_field :name %></p>
+
+  <p>
+    <%= list_form.fields_for :items, @list.items do |item_field| %>
+      <p>
+        <%= item_field.text_field :description %>
+        <%= item_field.text_field :priority %>
+      </p>
+    <% end %>
+  </p>
+
+<!--   <p>
+    <input type="text" name="list[items_attributes][][description]" />
+    <input type="text" name="list[items_attributes][][priority]" />
+  </p>
+ -->
+
+  <%= list_form.submit %>
+<% end %>
